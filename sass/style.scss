@@ -1,0 +1,129 @@
+// Importaciones de archivos parciales con variables, mixins, breakpoints y funciones
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/breakpoints';
+@import 'partials/functions.scss';
+
+// Estilos generales para resetear márgenes y rellenos en todos los elementos
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Bucle `@for` para generar estilos de listas
+@for $i from 1 through 4{
+    .li-#{$i} {
+        @if $i % 2 == 0 {
+            color: beige;
+        } @else {
+            color: $second-color;
+        }
+
+        @if $i == 4  {
+            background-color: palevioletred;
+            padding: $padding-defaul;
+            color: blanchedalmond;
+            width: fit-content;
+        }
+    }
+}
+
+// Bucle `@each` para generar estilos de cajas
+$boxes-colors: orange, pink, violet, aqua;
+
+@each $box-color in $boxes-colors{
+    .box-#{$box-color} {
+        background-color: $box-color;
+    }
+}
+
+// Estilos para el encabezado
+header {
+    ul {
+        @include flex-between; // Utiliza un mixin para establecer estilos de flexbox
+        list-style-type: none;
+        background-color: $primary-color;
+        color: beige;
+        padding: $padding-defaul;
+        font-size: em(18px); // Utiliza una función para convertir píxeles a ems
+
+    }
+
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: em(50px); 
+        color: chocolate;
+        text-align: center;
+        padding: $padding-defaul;
+
+        @include display-tiny { // Utiliza un mixin para establecer estilos de visualización en tamaños pequeños
+            text-align: start;
+            font-size: em(25px);
+        }
+    }
+}
+
+main {
+    padding: $padding-defaul;
+
+    .boxes {
+        flex-direction: column;
+        @include flex-between;
+
+        @include display-medium {
+            flex-direction: row;
+        }
+
+        .box {
+            @include box(100px, 100px);
+        }
+    }
+}
+
+section {
+    h2 {
+        font-weight: weight(bold);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        @include display-tiny {
+            text-align: center;
+        }
+    }
+
+    p {
+        font-weight: length(light);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+     // Heredar estilos críticos a errores mediante `@extend`
+    .criticalerror {
+        border: 2px solid chocolate;
+        border-radius: 8px
+    }
+
+    .error {
+        @extend .criticalerror; // Hereda estilos críticos
+        color: $error-text;
+        margin: $margin-defaul;
+        font-weight: weight(bold);
+        font-size: large;
+
+        &::placeholder{
+            color: $primary-color;
+            font-style: oblique;
+            font-weight: weight(light);
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: $company-color;
+    color: #fff;
+    padding: $padding-defaul;
+    width: 100%;
+    text-align: center
+}
+
+@include italy-links; // Utiliza un mixin para incluir enlaces relacionados con Italia

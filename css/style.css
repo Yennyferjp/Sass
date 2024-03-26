@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.li-1 {
+  color: #822382;
+}
+
+.li-2 {
+  color: beige;
+}
+
+.li-3 {
+  color: #822382;
+}
+
+.li-4 {
+  color: beige;
+  background-color: palevioletred;
+  padding: 16px;
+  color: blanchedalmond;
+  width: fit-content;
+}
+
+.box-orange {
+  background-color: orange;
+}
+
+.box-pink {
+  background-color: pink;
+}
+
+.box-violet {
+  background-color: violet;
+}
+
+.box-aqua {
+  background-color: aqua;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  background-color: #6a6a6a;
+  color: beige;
+  padding: 16px;
+  font-size: 1.125em;
+}
+header h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3.125em;
+  color: chocolate;
+  text-align: center;
+  padding: 16px;
+}
+@media only screen and (max-width: 320px) {
+  header h1 {
+    text-align: start;
+    font-size: 1.5625em;
+  }
+}
+
+main {
+  padding: 16px;
+}
+main .boxes {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  main .boxes {
+    flex-direction: row;
+  }
+}
+main .boxes .box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+}
+
+section h2 {
+  font-weight: 700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+@media only screen and (max-width: 320px) {
+  section h2 {
+    text-align: center;
+  }
+}
+section p {
+  font-weight: 1;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+section .criticalerror, section .error {
+  border: 2px solid chocolate;
+  border-radius: 8px;
+}
+section .error {
+  color: red;
+  margin: 16px;
+  font-weight: 700;
+  font-size: large;
+}
+section .error::placeholder {
+  color: #6a6a6a;
+  font-style: oblique;
+  font-weight: 300;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #5cd7d7;
+  color: #fff;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #5cd7d7;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,25 @@
+@mixin border-radius($border-radius: 50%, $border: 2px solid #000000) {
+    border-radius: $border-radius;
+    border: $border;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin box($width, $height) {
+    width: $width;
+    height: $height;
+    @include border-radius;
+}
+
+@mixin italy-links {
+    a {
+        text-decoration: none;
+        color: $company-color;
+        font-style: italic;
+        font-weight: bolder;
+    }
+
+}

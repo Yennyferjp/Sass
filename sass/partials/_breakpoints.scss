@@ -1,0 +1,27 @@
+//Dispositivos Móvil
+@mixin display-tiny{
+    @media only screen and (max-width: 320px){
+        @content;
+    }
+}
+
+//Dispositivos Tablet
+@mixin display-small{
+    @media only screen and (min-width: 480px){
+        @content;
+    }
+}
+
+//Dispositivos 
+@mixin display-medium{
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+//Dispositivos 
+@mixin display-large{
+    @media only screen and (min-width: 992px){
+        @content;
+    }
+}
