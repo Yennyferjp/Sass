@@ -9,6 +9,11 @@
 
 .li-2 {
   color: beige;
+  background-color: palevioletred;
+  padding: 16px;
+  color: blanchedalmond;
+  width: fit-content;
+  text-align: center;
 }
 
 .li-3 {
@@ -21,6 +26,7 @@
   padding: 16px;
   color: blanchedalmond;
   width: fit-content;
+  text-align: center;
 }
 
 .box-orange {
@@ -109,6 +115,15 @@ section .error::placeholder {
   color: #6a6a6a;
   font-style: oblique;
   font-weight: 300;
+}
+
+#seccion3 ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 16px;
+  font-size: 1.125em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer {

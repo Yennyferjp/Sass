@@ -19,11 +19,13 @@
             color: $second-color;
         }
 
-        @if $i == 4  {
+        @if $i == 2 or $i == 4  {
             background-color: palevioletred;
             padding: $padding-defaul;
             color: blanchedalmond;
             width: fit-content;
+            text-align: center;
+            
         }
     }
 }
@@ -115,6 +117,17 @@ section {
         }
     }
 }
+
+#seccion3{
+    ul {
+        @include flex-between; 
+        list-style-type: none;
+        padding: $padding-defaul;
+        font-size: em(18px); 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
 
 footer {
     position: fixed;
