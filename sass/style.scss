@@ -19,13 +19,20 @@
             color: $second-color;
         }
 
-        @if $i == 2 or $i == 4  {
+        @if $i == 2   {
             background-color: palevioletred;
             padding: $padding-defaul;
             color: blanchedalmond;
             width: fit-content;
             text-align: center;
-            
+        }
+
+        @if $i == 1 or $i == 3  {
+            background-color: pink;
+            padding: $padding-defaul;
+            color: blanchedalmond;
+            width: fit-content;
+            text-align: center;
         }
     }
 }
@@ -48,16 +55,14 @@ header {
         color: beige;
         padding: $padding-defaul;
         font-size: em(18px); // Utiliza una función para convertir píxeles a ems
-
     }
 
     h1 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: em(50px); 
-        color: chocolate;
         text-align: center;
-        padding: $padding-defaul;
-
+        color: chocolate;
+        padding: 16px 16px 0 16px;
         @include display-tiny { // Utiliza un mixin para establecer estilos de visualización en tamaños pequeños
             text-align: start;
             font-size: em(25px);
@@ -71,30 +76,41 @@ main {
     .boxes {
         flex-direction: column;
         @include flex-between;
-
         @include display-medium {
             flex-direction: row;
+            display: flex;
+            
         }
 
         .box {
             @include box(100px, 100px);
+            margin: auto;
+            margin-bottom: 20px;
+            padding: 20px;
         }
     }
+
 }
 
 section {
     h2 {
         font-weight: weight(bold);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-        @include display-tiny {
-            text-align: center;
+        padding-bottom: 16px;
+        @include display-tiny { // Utiliza un mixin para establecer estilos de visualización en tamaños pequeños
+            text-align: start;
+            font-size: em(20px);
+            color: chocolate;
         }
     }
 
     p {
+        padding-bottom: 16px;
         font-weight: length(light);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        @include display-tiny{
+            font-size: em(12px);
+        }
     }
 
      // Heredar estilos críticos a errores mediante `@extend`
@@ -123,7 +139,7 @@ section {
         @include flex-between; 
         list-style-type: none;
         padding: $padding-defaul;
-        font-size: em(18px); 
+        font-size: em(12px); 
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 }
